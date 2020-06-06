@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Game" representedClassName="Game" syncable="YES" codeGenerationType="category">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="numberOfMoves" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="winner" optional="YES" attributeType="String"/>
+        <relationship name="moves" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Move" inverseName="ofGame" inverseEntity="Move"/>
+    </entity>
+    <entity name="Move" representedClassName="Move" syncable="YES" codeGenerationType="category">
+        <attribute name="action" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isWinning" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="ofGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="moves" inverseEntity="Game"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="124.9765625" positionY="17.01171875" width="128" height="118"/>
+        <element name="Move" positionX="-279.9765625" positionY="2.00390625" width="128" height="118"/>
+    </elements>
+</model>
